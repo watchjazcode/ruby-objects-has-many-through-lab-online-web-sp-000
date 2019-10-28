@@ -30,8 +30,8 @@ class Doctor
   end
   
   def patients
-    collected_genres = []
-    songs.each do |song|
+    collected_patients = []
+    appointments.each do |appointment|
       collected_genres << song.genre
     end
     return collected_genres
