@@ -16,10 +16,6 @@ class Doctor
   def self.all
     @@all
   end
-
-  def appointments
-    Appointment.all.select {|appointment| appointment.doctor == self}
-  end
   
   def new_appointment(date, patient)
     Appointment.new(date, self, patient)
@@ -32,10 +28,9 @@ class Doctor
   def patients
     collected_patients = []
     appointments.each do |appointment|
-      collected_genres << song.genre
+      collected_patients << appointment.patient
     end
-    return collected_genres
-  end
+    return collected_patients
   end
   
 end
