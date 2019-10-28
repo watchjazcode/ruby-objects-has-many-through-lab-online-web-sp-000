@@ -26,7 +26,11 @@ class Artist
   end
   
   def genres 
-    Artist.song {|genre| genre.artist == self}
+    collected_genres = []
+    songs.each do |song|
+      collected_genres << song.genre
+    end
+    return collected_genres
   end
   
 end
